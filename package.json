@@ -21,9 +21,21 @@
 	"engines": {
 		"node": ">=12.0.0"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"vite",
+		"typescript",
+		"env",
+		"plugin",
+		"declaration"
+	],
+	"author": "gapkukb",
 	"devDependencies": {
 		"vite": "^4.0.3"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gapkukb/vite-plugin-env-dts"
+	},
+	"homepage": "https://github.com/gapkukb/vite-plugin-env-dts",
+	"bugs": "https://github.com/gapkukb/vite-plugin-env-dts/issues"
 }
