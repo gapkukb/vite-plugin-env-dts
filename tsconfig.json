@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"skipLibCheck": true,
+		"target": "ESNext",
+		"moduleResolution": "node",
+		"strict": false,
+		"declaration": true,
+		"noUnusedLocals": true,
+		"esModuleInterop": true,
+		"outDir": "dist",
+		"module": "commonjs",
+		"lib": ["ESNext", "DOM"],
+		"types": [],
+		"sourceMap": false
+	},
+	"include": ["./src"],
+	"exclude": ["node_modules", "dist"]
+}
