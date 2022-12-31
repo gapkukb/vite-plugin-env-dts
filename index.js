@@ -11,6 +11,7 @@ module.exports = function vitePluginEnvDTS(option = {}) {
 		name: "vite-plugin-env-dts",
 		config(_, { mode }) {
 			let env = loadEnv(mode, process.cwd(), prefix);
+			if (!env || Object.keys(env).length === 0) return;
 			env = parse(env, parser, arrayType);
 			const template = JSON.stringify(env, null, 2)
 				.replace(/"/g, "")
