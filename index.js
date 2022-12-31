@@ -12,7 +12,10 @@ module.exports = function vitePluginEnvDTS(option = {}) {
 		config(_, { mode }) {
 			let env = loadEnv(mode, process.cwd(), prefix);
 			env = parse(env, parser, arrayType);
-			const template = JSON.stringify(env, null, 2).replace(/"/g, "").replace(/,/g, ";");
+			const template = JSON.stringify(env, null, 2)
+				.replace(/"/g, "")
+				.replace(/,/g, ";")
+				.replace(/([\n\r])}$/, ";$1}");
 			const str = `interface ImportMetaEnv ${template}`;
 
 			fs.writeFile(path, str, { encoding: "utf-8" }, console.error);
