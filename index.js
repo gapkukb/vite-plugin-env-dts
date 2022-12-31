@@ -12,7 +12,7 @@ module.exports = function vitePluginEnvDTS(option = {}) {
 		config(_, { mode }) {
 			let env = loadEnv(mode, process.cwd(), prefix);
 			env = parse(env, parser, arrayType);
-			const template = JSON.stringify(env, null, 2).replace(/"/g, "");
+			const template = JSON.stringify(env, null, 2).replace(/"/g, "").replace(/,/g, ";");
 			const str = `interface ImportMetaEnv ${template}`;
 
 			fs.writeFile(path, str, { encoding: "utf-8" }, console.error);
@@ -53,5 +53,3 @@ const mapper = {
 	"[object Array]": "array",
 	"[object Object]": "Record<string,any>",
 };
-
-console.log(parse({ a: "3213", b: 1, c: false, d: { f: 1 }, e: [1, "fadf", 1] }));

@@ -73,7 +73,7 @@ import EnvDTS from 'vite-plugin-env-dts'
 ### select the array style range in tuple and array
 
 -   type: "tuple" | "array";
--   default: 'auto'
+-   default: 'array'
 
 ```
 //souce
